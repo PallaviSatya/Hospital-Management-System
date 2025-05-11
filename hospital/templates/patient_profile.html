@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Patient Profile</title>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Patient Profile: {{ patient.first_name }} {{ patient.last_name }}</h2>
+  
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Personal Information</h5>
+      <p><strong>Date of Birth:</strong> {{ patient.date_of_birth }}</p>
+      <p><strong>Gender:</strong> {{ patient.gender }}</p>
+      <p><strong>Address:</strong> {{ patient.address }}</p>
+      <p><strong>Phone:</strong> {{ patient.phone }} <a href="https://wa.me/{{ patient.phone }}" target="_blank" class="btn btn-success btn-sm ms-2"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+      <p><strong>Email:</strong> {{ patient.email }} <a href="mailto:{{ patient.email }}" target="_blank" class="btn btn-danger btn-sm ms-2"><i class="fas fa-envelope"></i> Gmail</a></p>
+      <p><strong>Allergies:</strong> {{ patient.allergies|default:'None' }}</p>
+      <p><strong>Ongoing Treatments:</strong> {{ patient.ongoing_treatments|default:'None' }}</p>
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Medical History</h5>
+      <p>{{ patient.medical_history|default:'No medical history available.' }}</p>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Visits</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Visit Date</th>
+          <th>Doctor</th>
+          <th>Notes</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for visit in visits %}
+        <tr>
+          <td>{{ visit.visit_date }}</td>
+          <td>{{ visit.appointment.doctor }}</td>
+          <td>{{ visit.notes|default:'No notes available' }}</td>
+          <td><a href="{% url 'visit_detail' visit.id %}" class="btn btn-primary btn-sm">View Details</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4">No visit history available.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-5">
+    <h3>Test Results</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Test Name</th>
+          <th>Upload Date</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in test_results %}
+        <tr>
+          <td>{{ result.test_name }}</td>
+          <td>{{ result.upload_date }}</td>
+          <td><a href="{{ result.result_file.url }}" class="btn btn-info btn-sm">Download</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="3">No test results available.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

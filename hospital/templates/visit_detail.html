@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+  <title>Visit Details</title>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Visit Details: {{ visit.patient.first_name }} {{ visit.patient.last_name }}</h2>
+  
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Visit Information</h5>
+      <p><strong>Date:</strong> {{ visit.visit_date }}</p>
+      <p><strong>Doctor:</strong> {{ visit.appointment.doctor }}</p>
+      <p><strong>Notes:</strong> {{ visit.notes|default:'No notes available' }}</p>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Test Results for this Visit</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Test Name</th>
+          <th>Upload Date</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in test_results %}
+        <tr>
+          <td>{{ result.test_name }}</td>
+          <td>{{ result.upload_date }}</td>
+          <td><a href="{{ result.result_file.url }}" class="btn btn-info btn-sm">Download</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="3">No test results for this visit.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

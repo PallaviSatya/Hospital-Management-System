@@ -1,0 +1,717 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+  <meta name="author" content="themefisher.com">
+
+  <title>Hope Hospitals - Health & Care Medical Care</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}" />
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+  <!-- Slick Slider  CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick-theme.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body id="top">
+	<header>
+		<div class="header-top-bar">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<ul class="top-bar-info list-inline-item pl-0 mb-0">
+							<li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>support@hopehospitals.com</a></li>
+							<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address: Near Beach road, Vizag</li>
+						</ul>
+					</div>
+					<div class="col-lg-6">
+						<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+							<a href="tel:+91-800-810-1249" >
+								<span>Call Now : </span>
+								<span class="h4">800-810-1249</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navigation" id="navbar">
+			<div class="container">
+				  <a class="navbar-brand" href="{% url 'index' %}">
+					  <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+				  </a>
+	
+				  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="icofont-navigation-menu"></span>
+			  </button>
+		  
+			  <div class="collapse navbar-collapse" id="navbarmain">
+				<ul class="navbar-nav ml-auto">
+				  <li class="nav-item active">
+					<a class="nav-link" href="{% url 'index' %}">Home</a>
+				  </li>
+				   <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="{% url 'service' %}">Services</a></li>
+	
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="{% url 'department' %}" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i class="icofont-thin-down"></i></a>
+						<ul class="dropdown-menu" aria-labelledby="dropdown02">
+							<li><a class="dropdown-item" href="{% url 'department' %}">All Departments</a></li>
+							<li><a class="dropdown-item" href="{% url 'cardio_dept' %}">Cardiology</a></li>
+							<li><a class="dropdown-item" href="{% url 'neuro_dept' %}">Neurology</a></li>
+							<li><a class="dropdown-item" href="{% url 'gyno_dept' %}">Gynecology</a></li>
+						</ul>
+					  </li>
+	
+					  <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="{% url 'doctor' %}" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
+						<ul class="dropdown-menu" aria-labelledby="dropdown03">
+							<li><a class="dropdown-item" href="{% url 'doctor' %}">Our Doctors</a></li>
+							<li><a class="dropdown-item" href="{% url 'raj_single' %}">Dr. Raj Vikramaditya</a></li>
+							<li><a class="dropdown-item" href="{% url 'vanshika_single' %}">Dr. Vanshika Singh</a></li>
+							<li><a class="dropdown-item" href="{% url 'shambhavi_single' %}">Dr. Shambhavi Mishra</a></li>
+							<li><a class="dropdown-item" href="{% url 'appointment' %}">Appointment</a></li>
+						</ul>
+					  </li>
+	
+					<li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">appointment</a></li>
+				   <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+				   <li class="nav-item"><a class="nav-link" href="{% url 'pharmacy' %}">Pharmacy</a></li>
+				</ul>
+			  </div>
+			</div>
+		</nav>
+	</header>
+	
+
+
+
+<!-- Slider Start -->
+<section class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-xl-7">
+				<div class="block">
+					<div class="divider mb-3"></div>
+					<span class="text-uppercase text-sm letter-spacing ">Total Health care solution</span>
+					<h1 class="mb-3 mt-3">Your most trusted health partner</h1>
+					
+					<p class="mb-4 pr-5">Here at Hope Hospitals is your all in one Health Care Solutions. Our Doctors will help you. We are with you.</p>
+					<div class="btn-container ">
+						<a href="{% url 'appointment' %}" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Make appoinment <i class="icofont-simple-right ml-2  "></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="feature-block d-lg-flex">
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-surgeon-alt"></i>
+						</div>
+						<span>24 Hours Service</span>
+						<h4 class="mb-3">Online Appoinment</h4>
+						<p class="mb-4">Get All time support for emergency. We have introduced the principle of family medicine.</p>
+						<a href="{% url 'appointment' %}" class="btn btn-main btn-round-full">Make a appoinment</a>
+					</div>
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-ui-clock"></i>
+						</div>
+						<span>Timing schedule</span>
+						<h4 class="mb-3">Working Hours</h4>
+						<ul class="w-hours list-unstyled">
+		                    <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
+		                    <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
+		                    <li class="d-flex justify-content-between">Sat - Sun : <span>10:00 - 17:00</span></li>
+		                </ul>
+					</div>
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-support"></i>
+						</div>
+						<span>Emegency Cases</span>
+						<h4 class="mb-3">800-810-1249</h4>
+						<p>Get All time support for emergency.We have introduced the principle of family medicine.Get Conneted with us for any urgency .</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="section about">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img">
+					<img src="{% static 'images/about/img-1.jpg' %}" alt="" class="img-fluid">
+					<img src="{% static 'images/about/img-2.jpg' %}" alt="" class="img-fluid mt-4">
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img mt-4 mt-lg-0">
+					<img src="{% static 'images/about/img-3.jpg' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="about-content pl-4 mt-4 mt-lg-0">
+					<h2 class="title-color">Personal care <br>& healthy living</h2>
+					<p class="mt-4 mb-5">We have extroadinary world class medical equippment to take care of you.</p>
+
+					<a href="{% url 'service' %}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="cta-section ">
+	<div class="container">
+		<div class="cta position-relative">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-doctor"></i>
+						<span class="h3">2</span>k
+						<p>Happy People</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-flag"></i>
+						<span class="h3">200</span>+
+						<p>Surgery Comepleted</p>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-badge"></i>
+						<span class="h3">10</span>+
+						<p>Expert Doctors</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-globe"></i>
+						<span class="h3">2</span>
+						<p>Worldwide Branch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section service gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7 text-center">
+				<div class="section-title">
+					<h2>Exceptional Patient Care</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>We are dedicated to providing top-notch medical services with compassion and care.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-laboratory text-lg"></i>
+						<h4 class="mt-3 mb-3">Advanced Diagnostic Services</h4>
+					</div>
+
+					<div class="content">
+						<p class="mb-4">Our state-of-the-art laboratory is equipped to perform a wide range of medical tests.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-heart-beat-alt text-lg"></i>
+						<h4 class="mt-3 mb-3">Cardiovascular Care</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">Our team of cardiologists and cardiothoracic surgeons provide comprehensive care for heart conditions.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-hospital text-lg"></i>
+						<h4 class="mt-3 mb-3">24/7 Pharmacy Services</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">Our pharmacy is open 24/7 to ensure that you have access to the medications you need.</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-crutch text-lg"></i>
+						<h4 class="mt-3 mb-3">Comprehensive Body Care</h4>
+					</div>
+
+					<div class="content">
+						<p class="mb-4">Our team of healthcare professionals provides comprehensive care for your overall well-being.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-brain-alt text-lg"></i>
+						<h4 class="mt-3 mb-3">Neurological Disorders</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">Our neurologists and neurosurgeons provide expert care for brain and nervous system disorders.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-dna-alt-1 text-lg"></i>
+						<h4 class="mt-3 mb-3">Women's Health Services</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">Our obstetricians and gynecologists provide comprehensive care for women's health issues.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section appoinment">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6 ">
+				<div class="appoinment-content">
+					<img src="{% static 'images/about/img-3.jpg' %}" alt="" class="img-fluid">
+					<div class="emergency">
+						<h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>+91 800-810-1249</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-10 ">
+				<div class="appoinment-wrap mt-5 mt-lg-0">
+					<h2 class="mb-2 title-color">Book an Appointment</h2>
+			  <p class="mb-4">Schedule a consultation with our experienced doctors and take the first step towards better health.</p>
+			  <form class="appoinment-form" method="post" action="{% url 'appointment' %}">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="form-group">
+							<select name="department" class="form-control" id="exampleFormControlSelect1" required>
+								<option value="" disabled selected>Choose Department</option>
+								<option value="Cardiology">Cardiology</option>
+								<option value="Neurology">Neurology</option>
+								<option value="Gynecology">Gynecology</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<select name="doctor" class="form-control" id="exampleFormControlSelect2" required>
+								<option value="" disabled selected>Select Doctor</option>
+								<option value="Dr. Raj Vikramaditya">Dr. Raj Vikramaditya</option>
+								<option value="Dr. Vanshika Singh">Dr. Vanshika Singh</option>
+								<option value="Dr. Shambhavi Mishra">Dr. Shambhavi Mishra</option>
+							</select>
+						</div>
+					</div>
+			
+					<script>
+						// Get the selects
+						const departmentSelect = document.getElementById("exampleFormControlSelect1");
+						const doctorSelect = document.getElementById("exampleFormControlSelect2");
+			
+						// Add event listeners to the selects
+						departmentSelect.addEventListener("change", function() {
+							const department = departmentSelect.value;
+							switch (department) {
+								case "Cardiology":
+									doctorSelect.value = "Dr. Raj Vikramaditya";
+									break;
+								case "Neurology":
+									doctorSelect.value = "Dr. Vanshika Singh";
+									break;
+								case "Gynecology":
+									doctorSelect.value = "Dr. Shambhavi Mishra";
+									break;
+								default:
+									doctorSelect.value = "";
+							}
+						});
+			
+						doctorSelect.addEventListener("change", function() {
+							const doctor = doctorSelect.value;
+							switch (doctor) {
+								case "Dr. Raj Vikramaditya":
+									departmentSelect.value = "Cardiology";
+									break;
+								case "Dr. Vanshika Singh":
+									departmentSelect.value = "Neurology";
+									break;
+								case "Dr. Shambhavi Mishra":
+									departmentSelect.value = "Gynecology";
+									break;
+								default:
+									departmentSelect.value = "";
+							}
+						});
+					</script>
+			
+					<div class="col-lg-6">
+						<div class="form-group">
+							<input name="date" id="date" type="date" class="form-control" placeholder="dd/mm/yyyy" required>
+						</div>
+					</div>
+			
+					<div class="col-lg-6">
+						<div class="form-group">
+							<select name="time" id="time" class="form-control" required>
+								<option value="" disabled selected>Select a time slot</option>
+								<option value="09:30">9:30 AM</option>
+								<option value="10:30">10:30 AM</option>
+								<option value="12:00">12:00 PM</option>
+								<option value="14:00">2:00 PM</option>
+								<option value="16:00">4:00 PM</option>
+								<option value="18:00">6:00 PM</option>
+							</select>
+						</div>
+					</div>
+			
+					<div class="col-lg-6">
+						<div class="form-group">
+							<input name="name" id="name" type="text" class="form-control" placeholder="Full Name" required>
+						</div>
+					</div>
+			
+					<div class="col-lg-6">
+						<div class="form-group">
+							<input name="phone" id="phone" type="tel" class="form-control" placeholder="(+91) XXXXX XXXXX" required>
+						</div>
+					</div>
+			
+					<div class="col-lg-6">
+						<div class="form-group">
+							<input name="email" id="email" type="email" class="form-control" placeholder="xyz@gmail.com" required>
+						</div>
+					</div>
+				</div>
+			
+				<div class="form-group-2 mb-4">
+					<textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Complaint" required></textarea>
+				</div>
+			
+				<button type="submit" class="btn btn-main btn-round-full">Make Appointment<i class="icofont-simple-right ml-2"></i></button>
+			</form>
+
+            </div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section testimonial-2 gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>We served over 1000+ Patients</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>Know more about us on our blogs and reach out to us for many more services and health campaigns.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-12 testimonial-wrap-2">
+				<div class="testimonial-block style-2  gray-bg">
+					<i class="icofont-quote-right"></i>
+
+					<div class="testimonial-thumb">
+						<img src="{% static 'images/team/test-thumb1.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info ">
+						<h4>Amazing service!</h4>
+						<span>John Partho</span>
+						<p>
+							The Hospitals rooms were so clean and clear. They provide good care and nice sanitization all over the rooms.
+						</p>
+					</div>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'images/team/test-thumb2.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Expert doctors!</h4>
+						<span>Mullar Sarth</span>
+						<p>
+							The Highly qualified doctors here have experienced in various fields and high Quality surgeons.
+						</p>
+					</div>
+					
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'images/team/test-thumb3.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Good Support!</h4>
+						<span>Kolis Mullar</span>
+						<p>
+							They provide very quick and efficinet support within no time and appoinment care was so good.
+						</p>
+					</div>
+					
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'images/team/test-thumb4.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Nice Environment!</h4>
+						<span>Partho Sarothi</span>
+						<p class="mt-4">
+							 The Environment of the hospital was so good covered with many trees around the hospital and the fresh air was an addon.
+						</p>
+					</div>
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'images/team/test-thumb1.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Modern Service!</h4>
+						<span>Kolis Mullar</span>
+						<p>
+							The equippment of the hospital was so modern and the resources used here are way too much advanced and well structured.
+						</p>
+					</div>
+					<i class="icofont-quote-right"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section clients">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>Partners who support us</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>As a charity group of hospitals. we are lucky and glad to find some good sponsers from all over the country and we'll be happy if an helping hand was added from you.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row clients-logo">
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/1.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/2.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/3.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/4.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/5.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/6.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/3.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/4.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/5.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/6.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- footer Start -->
+<footer class="footer section gray-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mr-auto col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<div class="logo mb-4">
+						<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+					</div>
+					<p>We'll be planning to improve our hospital features at every time.</p>
+
+					<ul class="list-inline footer-socials mt-4">
+						<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Department</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="{% url 'womenhealth' %}">Women's Health</a></li>
+						<li><a href="{% url 'cardio_dept' %}">Cardiology</a></li>
+						<li><a href="{% url 'neuro_dept' %}">Neurology</a></li>
+						<li><a href="{% url 'gyno_dept' %}">Gynecology</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Support</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Call Us</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget widget-contact mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Get in Touch</h4>
+					<div class="divider mb-4"></div>
+
+					<div class="footer-contact-block mb-4">
+						<div class="icon d-flex align-items-center">
+							<i class="icofont-email mr-3"></i>
+							<span class="h6 mb-0">Support Available for 24/7</span>
+						</div>
+						<h4 class="mt-2"><a href="tel:+23-345-67890">support@hopehospitals.com</a></h4>
+					</div>
+
+					<div class="footer-contact-block">
+						<div class="icon d-flex align-items-center">
+							<i class="icofont-support mr-3"></i>
+							<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+						</div>
+						<h4 class="mt-2"><a href="tel:+23-345-67890">+91 800-810-1249</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-btm py-4 mt-5">
+			<div class="row">
+				<div class="col-lg-4">
+					<a class="backtop js-scroll-trigger" href="#top">
+						<i class="icofont-long-arrow-up"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    
+    <!-- Main jQuery -->
+    <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+    <!-- Bootstrap 4.3.2 -->
+    <script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/counterup/jquery.easing.js' %}"></script>
+    <!-- Slick Slider -->
+    <script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
+    <!-- Counterup -->
+    <script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+    
+    <script src="{% static 'plugins/shuffle/shuffle.min.js' %}"></script>
+    <script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+  
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+
+  </body>
+  </html>

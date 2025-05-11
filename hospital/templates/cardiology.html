@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+  <meta name="author" content="themefisher.com">
+
+  <title>Hope Hospitals - Health & Care Medical Care</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}" />
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+  <!-- Slick Slider  CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick-theme.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+  <style>
+    .logout-container {
+      position: absolute; /* Position relative to the nearest positioned ancestor */
+      top: 20px; /* Distance from the top of the page */
+      right: 20px; /* Distance from the right of the page */
+      z-index: 1000; /* Ensure it appears above other elements */
+    }
+  </style>
+</head>
+
+<body id="top">
+    
+<section class="page-title bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">Appointments</span>
+          <h1 class="text-capitalize mb-5 text-lg">Dr. Raj Vikramaditya</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="search-bar py-5" style="background-color: #f7f7f7; padding: 20px; border-bottom: 1px solid #ddd;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="block">
+          <form>
+            <div class="form-group" style="position: relative;">
+              <input type="text" class="form-control form-control-lg" id="medicine-search" placeholder="Search for Patient ID" style="padding: 20px; font-size: 18px; border: none; border-radius: 0; box-shadow: none; width: calc(100% - 150px);">
+              <button type="submit" class="btn btn-lg btn-primary" style="position: absolute; top: 0; right: 0; padding: 10px 20px; font-size: 16px; border: none; border-radius: 0; background-color: #337ab7; color: #fff; margin-left: 20px;">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- Display search results here -->
+<section class="patient-table py-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Date</th>
+                          <th>Time</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {% for patient in cardiology_patients %}
+                        <tr>
+                            <td><a href="{% url 'patient_profile' patient.name %}">{{ patient.name }}</a></td>
+                            <td>{{ patient.date }}</td>
+                            <td>{{ patient.time }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3" class="text-center">No appointments found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+<!-- Logout Button -->
+<div class="logout-container">
+  <form action="{% url 'logout' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Logout</button>
+  </form>
+</div>
+
+</body>
+</html>
